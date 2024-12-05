@@ -1,10 +1,21 @@
 import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 interface ContactProps {
   id?: string;
 }
 
 const Contact: React.FC<ContactProps> = ({ id }) => {
+  const [state, handleSubmit] = useForm("mpwzlklj");
+
+  if (state.succeeded) {
+    return (
+      <div className="bg-slate-900 min-h-screen flex items-center justify-center px-4">
+        <p className="text-blue-400 text-xl text-center">Thanks for your message! We&apos;ll be in touch soon.</p>
+      </div>
+    );
+  }
+
   return (
     <div id={id} className="bg-slate-900 min-h-screen flex flex-col px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       <div 
@@ -19,7 +30,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           Get In Touch
         </h2>
         
-        <form className="space-y-4 sm:space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
           <div className="space-y-3 sm:space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
@@ -27,8 +38,10 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
                   className="w-full px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 />
+                <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-400 text-sm mt-1" />
               </div>
               
               <div>
@@ -36,8 +49,10 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   className="w-full px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 />
+                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-400 text-sm mt-1" />
               </div>
             </div>
             
@@ -45,18 +60,21 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
               <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Message</label>
               <textarea
                 id="message"
+                name="message"
                 rows={4}
                 className="w-full px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
               ></textarea>
+              <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-400 text-sm mt-1" />
             </div>
           </div>
           
           <div className="flex justify-end">
             <button 
               type="submit"
-              className="w-full sm:w-auto px-6 sm:px-8 py-2 sm:py-2.5 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors text-sm sm:text-base"
+              disabled={state.submitting}
+              className="w-full sm:w-auto px-6 sm:px-8 py-2 sm:py-2.5 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send Message
+              {state.submitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>
