@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Price: React.FC = () => {
+interface PriceProps {
+  id?: string;
+}
+
+const Price: React.FC<PriceProps> = ({ id }) => {
   const features = [
     "Responsive Design for All Devices",
     "SEO Optimization",
@@ -14,7 +18,7 @@ const Price: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <div id={id} className="bg-white py-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-3xl text-center">
         <h2 className="text-[2.5rem] md:text-[3rem] leading-tight font-display bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text mb-12">
           Simple Pricing, Powerful Results

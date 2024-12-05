@@ -7,16 +7,23 @@ import Work from './components/work';
 import Contact from './components/contact';
 
 export default function Home() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <main>
       <Hero 
-        onGetStarted={() => {}}
-        onLearnMore={() => {}}
+        onGetStarted={() => scrollToSection('contact')}
+        onLearnMore={() => scrollToSection('pricing')}
       />
-      <Price /> 
+      <Price id="pricing" /> 
       <FAQ />
       <Work />
-      <Contact />
+      <Contact id="contact" />
     </main>
   );
 }

@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  id?: string;
+}
+
+const Contact: React.FC<ContactProps> = ({ id }) => {
   return (
-    <div className="bg-slate-900 min-h-[100vh] flex flex-col justify-between px-4 sm:px-6 lg:px-8">
+    <div id={id} className="bg-slate-900 min-h-[100vh] flex flex-col justify-between px-4 sm:px-6 lg:px-8">
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
