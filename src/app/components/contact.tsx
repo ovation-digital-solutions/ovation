@@ -6,7 +6,7 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ id }) => {
   return (
-    <div id={id} className="bg-slate-900 min-h-[100vh] flex flex-col justify-between px-4 sm:px-6 lg:px-8">
+    <div id={id} className="bg-slate-900 min-h-screen flex flex-col px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -14,39 +14,39 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           backgroundSize: '400px 400px',
         }}
       />
-      <div className="container mx-auto max-w-3xl pt-24">
-        <h2 className="text-2xl font-display bg-gradient-to-r from-blue-400 to-blue-200 text-transparent bg-clip-text mb-8">
+      <div className="container mx-auto max-w-3xl flex-grow">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-display bg-gradient-to-r from-blue-400 to-blue-200 text-transparent bg-clip-text mb-6 sm:mb-8">
           Get In Touch
         </h2>
         
-        <form className="space-y-6">
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form className="space-y-4 sm:space-y-6">
+          <div className="space-y-3 sm:space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-400 mb-2">Name</label>
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-400 mb-2">Email</label>
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Email</label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
                 />
               </div>
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-slate-400 mb-2">Message</label>
+              <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-slate-400 mb-1.5 sm:mb-2">Message</label>
               <textarea
                 id="message"
                 rows={4}
-                className="w-full px-4 py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
               ></textarea>
             </div>
           </div>
@@ -54,7 +54,7 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           <div className="flex justify-end">
             <button 
               type="submit"
-              className="px-8 py-2.5 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors"
+              className="w-full sm:w-auto px-6 sm:px-8 py-2 sm:py-2.5 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors text-sm sm:text-base"
             >
               Send Message
             </button>
@@ -62,12 +62,12 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
         </form>
       </div>
 
-      <footer className="container mx-auto max-w-2xl py-8 mt-16 border-t border-slate-800">
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-slate-400">
-          <a href="/blog" className="hover:text-blue-400 transition-colors">Blog</a>
-          <a href="/case-studies" className="hover:text-blue-400 transition-colors">Case Studies</a>
-          <a href="/about" className="hover:text-blue-400 transition-colors">About Us</a>
-          <div className="flex items-center gap-4">
+      <footer className="container mx-auto max-w-2xl mt-16 pt-8 border-t border-slate-800">
+        <nav className="grid grid-cols-1 sm:flex sm:flex-wrap justify-center gap-y-4 sm:gap-x-8 text-sm text-slate-400 pb-8">
+          <a href="/blog" className="text-center hover:text-blue-400 transition-colors">Blog</a>
+          <a href="/case-studies" className="text-center hover:text-blue-400 transition-colors">Case Studies</a>
+          <a href="/about" className="text-center hover:text-blue-400 transition-colors">About Us</a>
+          <div className="flex justify-center gap-6 sm:gap-4">
             <a href="https://twitter.com" className="hover:text-blue-400 transition-colors">
               Twitter
             </a>
