@@ -19,7 +19,19 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted, onLearnMore }) => {
   };
 
   return (
-    <div className="bg-slate-900 min-h-[100vh] flex items-center px-4 sm:px-6 lg:px-8 relative">
+    <div 
+      className="bg-slate-900 min-h-[100vh] flex items-center px-4 sm:px-6 lg:px-8 relative"
+      style={{
+        backgroundImage: `
+          radial-gradient(70% 80% at 50% 0%, 
+            rgba(29, 43, 65, 0.7) 0%,
+            rgba(13, 27, 41, 0.5) 30%,
+            rgba(2, 5, 9, 0.2) 70%,
+            rgba(15, 26, 41, 0.1) 100%
+          )
+        `
+      }}
+    >
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
