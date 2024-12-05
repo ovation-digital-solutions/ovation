@@ -26,7 +26,7 @@ const Work: React.FC = () => {
         }}
       />
       <div className="container mx-auto px-4 max-w-6xl relative">
-        <h2 className="text-[2.5rem] md:text-[3rem] leading-tight font-display bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text mb-16 text-center">
+        <h2 className="text-[1.5rem] md:text-[2rem] leading-tight font-display text-foreground mb-16 border-b-2 border-custom-gray">
           Recent Work
         </h2>
         
@@ -39,8 +39,8 @@ const Work: React.FC = () => {
               key={index}
               className="block group"
             >
-              <div className="p-8 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors bg-white shadow-sm hover:shadow-md">
-                <h3 className="text-2xl font-semibold mb-4 group-hover:text-blue-500 transition-colors">
+              <div className="p-8 rounded-xl border border-slate-900 hover:border-blue-400 transition-colors bg-white shadow-sm hover:shadow-md">
+                <h3 className="text-2xl font-semibold mb-4 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
                 <p className="text-slate-600 text-lg mb-6">

@@ -8,33 +8,39 @@ interface PriceProps {
 const Price: React.FC<PriceProps> = ({ id, onGetStarted }) => {
   const features = [
     "Responsive Design for All Devices",
-    "SEO Optimization",
+    "SEO Optimization", 
     "Custom Domain Setup",
     "Contact Form Integration",
     "Google Analytics Integration",
     "Custom branding with your colors, assets, and media",
     "Beautiful photo galleries and image slideshows",
-    
-    
   ];
 
   return (
-    <div id={id} className="bg-white py-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-3xl text-center">
-        <h2 className="text-[2.5rem] md:text-[3rem] leading-tight font-display bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text mb-12">
-          Simple Pricing, Powerful Results
-        </h2>
-            
-        <div className="mb-12">
-          <span className="text-5xl font-bold text-slate-900">Starting at $499</span>
-          <p className="text-slate-600 mt-4 text-lg">Everything you need to get started</p>
+    <div id={id} className="bg-slate-900 text-white px-4 xs:px-6 sm:px-8 py-8 xs:py-10 sm:py-12 rounded-2xl xs:rounded-3xl shadow-lg max-w-[320px] xs:max-w-[400px] sm:max-w-[500px] md:max-w-[550px] lg:max-w-[600px] mx-auto my-24 xs:my-28 sm:my-32 md:my-36 relative">
+      <div 
+        className="absolute inset-0 opacity-[0.05] rounded-2xl xs:rounded-3xl"
+        style={{
+          background: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L100 100 M100 0 L0 100' stroke='rgb(79,79,79)' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
+          backgroundSize: '400px 400px',
+        }}
+      />
+      
+      <div className="relative">
+        <h3 className="text-xl xs:text-2xl sm:text-2xl lg:text-3xl font-medium mb-4 xs:mb-5 sm:mb-6">Simple Pricing, Powerful Results</h3>
+        
+        <div className="flex items-baseline gap-1 xs:gap-2 mb-1">
+          <span className="text-4xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold">$499</span>
+          <span className="text-lg xs:text-xl sm:text-xl lg:text-2xl">USD</span>
         </div>
-            
-        <div className="text-left max-w-lg mx-auto">
+        
+        <p className="text-xs xs:text-sm text-gray-400 mb-4 xs:mb-5 sm:mb-6">plus local taxes</p>
+        
+        <ul className="space-y-2 xs:space-y-2.5 sm:space-y-3 mb-6 xs:mb-7 sm:mb-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex items-center mb-6 text-lg">
+            <li key={index} className="flex items-center gap-2 xs:gap-3">
               <svg 
-                className="w-6 h-6 text-blue-500 mr-4"
+                className="w-4 h-4 xs:w-5 xs:h-5 text-blue-400 flex-shrink-0"
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -46,17 +52,21 @@ const Price: React.FC<PriceProps> = ({ id, onGetStarted }) => {
                   d="M5 13l4 4L19 7" 
                 />
               </svg>
-              <span className="text-slate-700">{feature}</span>
-            </div>
+              <span className="text-sm xs:text-base sm:text-lg text-gray-300">{feature}</span>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <button 
-          className="mt-12 px-10 py-4 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors text-base"
+          className="w-full py-3 xs:py-3.5 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors text-sm xs:text-base"
           onClick={onGetStarted}
         >
-          Get Started Today
+          Contact us
         </button>
+        
+        <div className="mt-4 xs:mt-5 sm:mt-6 text-xs xs:text-sm text-center text-gray-400">
+          Once you contact us, we&apos;ll discuss your project requirements and create a tailored solution for your needs.
+        </div>
       </div>
     </div>
   );

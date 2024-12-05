@@ -31,17 +31,17 @@ const FAQ: React.FC = () => {
   return (
     <div className="bg-slate-50 py-12 xs:py-16 sm:py-20 md:py-24 px-4 xs:px-5 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-xs xs:max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
-        <h2 className="text-[1.75rem] xs:text-[2rem] sm:text-[2.25rem] md:text-[2.5rem] lg:text-[3rem] leading-tight font-display bg-gradient-to-r from-blue-600 to-blue-400 text-transparent bg-clip-text mb-8 xs:mb-10 sm:mb-12 text-center">
+        <h2 className="text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] leading-tight font-display text-foreground mb-8 xs:mb-10 sm:mb-12 border-b-2 border-custom-gray">
           Frequently Asked Questions
         </h2>
         
         <div className="space-y-6 xs:space-y-7 sm:space-y-8">
           {faqs.map((faq, index) => (
             <div key={index} className="border-b border-slate-200 pb-6 xs:pb-7 sm:pb-8">
-              <h3 className="text-lg xs:text-xl sm:text-xl lg:text-2xl font-medium text-slate-900 mb-2 xs:mb-3 sm:mb-4">
+              <h3 className="text-lg xs:text-xl sm:text-xl lg:text-2xl font-medium text-slate-900 mb-2 xs:mb-3 sm:mb-4 text-left">
                 {faq.question}
               </h3>
-              <p className="text-base xs:text-lg sm:text-lg lg:text-xl text-slate-600 leading-relaxed">
+              <p className="text-base xs:text-lg sm:text-lg lg:text-xl text-slate-600 leading-relaxed text-left">
                 {faq.answer}
               </p>
             </div>
