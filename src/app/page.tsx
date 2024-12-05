@@ -20,7 +20,10 @@ export default function Home() {
         onGetStarted={() => scrollToSection('contact')}
         onLearnMore={() => scrollToSection('pricing')}
       />
-      <Price id="pricing" /> 
+      <Price 
+        id="pricing" 
+        onGetStarted={() => scrollToSection('contact')}
+      /> 
       <FAQ />
       <Work />
       <Contact id="contact" />

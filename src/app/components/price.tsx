@@ -2,9 +2,10 @@ import React from 'react';
 
 interface PriceProps {
   id?: string;
+  onGetStarted?: () => void;
 }
 
-const Price: React.FC<PriceProps> = ({ id }) => {
+const Price: React.FC<PriceProps> = ({ id, onGetStarted }) => {
   const features = [
     "Responsive Design for All Devices",
     "SEO Optimization",
@@ -52,6 +53,7 @@ const Price: React.FC<PriceProps> = ({ id }) => {
 
         <button 
           className="mt-12 px-10 py-4 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-medium transition-colors text-base"
+          onClick={onGetStarted}
         >
           Get Started Today
         </button>
