@@ -33,7 +33,7 @@ const Work: React.FC = () => {
         }}
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.5rem] leading-tight font-display text-foreground mb-12 sm:mb-16 md:mb-20 lg:mb-24 border-b-2 border-custom-gray pb-4">
+        <h2 className="text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] leading-tight font-display text-foreground mb-12 sm:mb-16 md:mb-20 lg:mb-24 border-b-2 border-custom-gray pb-4">
           Recent Work
         </h2>
         
