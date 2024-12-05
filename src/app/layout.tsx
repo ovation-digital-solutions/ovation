@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/textPreview.png",
+        url: "/textPreview.png?v=2",
         width: 1200,
         height: 630,
         alt: "Ovation Digital Solutions"
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ovation Digital Solutions | Professional Web Development",
     description: "Enterprise-quality web development that fits your budget and reaches every user.",
-    images: ["/textPreview.png"] // Changed to match OpenGraph image
+    images: ["/textPreview.png?v=2"]
   }
 };
 
