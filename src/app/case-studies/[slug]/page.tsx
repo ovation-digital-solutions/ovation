@@ -6,18 +6,19 @@ type CaseStudyComponents = {
 };
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-function Page({ params }: PageProps) {
+async function Page({ params }: PageProps) {
   const caseStudies: CaseStudyComponents = {
     sneakar: Sneakar,
     // ... other case studies
   };
 
-  const CaseStudyComponent = caseStudies[params.slug];
+  const { slug } = await params;
+  const CaseStudyComponent = caseStudies[slug];
 
   if (!CaseStudyComponent) {
     notFound();
