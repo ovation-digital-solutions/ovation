@@ -5,14 +5,19 @@ type CaseStudyComponents = {
   [key: string]: () => JSX.Element;
 };
 
-async function Page({ params }: { params: { slug: string } }) {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+function Page({ params }: PageProps) {
   const caseStudies: CaseStudyComponents = {
     sneakar: Sneakar,
     // ... other case studies
   };
 
-  const { slug } = await params;
-  const CaseStudyComponent = caseStudies[slug];
+  const CaseStudyComponent = caseStudies[params.slug];
 
   if (!CaseStudyComponent) {
     notFound();
