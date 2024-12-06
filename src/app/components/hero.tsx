@@ -20,9 +20,9 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted, onLearnMore }) => {
   };
 
   return (
-    <div className="bg-slate-900 min-h-screen flex flex-col">
-      <div className="w-full border-b border-slate-800">
-        <div className="flex justify-center items-center gap-4 py-3 text-[10px] xs:text-xs sm:text-sm text-slate-400">
+    <div className="bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen flex flex-col">
+      <div className="w-full border-b border-slate-700/50 backdrop-blur-sm bg-slate-900/50">
+        <div className="flex flex-wrap justify-center items-center gap-3 xs:gap-4 sm:gap-6 py-3 xs:py-4 text-[10px] xs:text-xs sm:text-sm md:text-base text-slate-300">
           <div className="flex items-center gap-1">
             <svg className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
@@ -53,54 +53,65 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted, onLearnMore }) => {
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-center px-3 xs:px-5 sm:px-6 lg:px-8 relative overflow-hidden py-16 xs:py-24 lg:py-32">
+      <div className="flex-1 flex items-center justify-center px-3 xs:px-4 sm:px-6 md:px-8 lg:px-10 relative overflow-hidden py-12 xs:py-16 sm:py-20 md:py-28 lg:py-36">
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="absolute inset-0 -left-1/3 -right-1/3">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent rounded-3xl blur-2xl"></div>
-            <div 
-              className="absolute inset-0 opacity-[0.05] rounded-2xl xs:rounded-3xl"
-              style={{
-                background: `url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L100 100 M100 0 L0 100' stroke='rgb(79,79,79)' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
-                backgroundSize: '400px 400px',
-              }}
-            />
+          <div className="absolute inset-0 -left-1/2 -right-1/2">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-transparent rounded-[60px] blur-3xl"></div>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 xs:gap-8 lg:gap-4 py-6 xs:py-8 lg:py-4">
-            <div className="relative z-20 lg:max-w-[600px] xl:max-w-[650px] px-2 xs:px-0">
-              <h1 className="text-[1.75rem] xs:text-[2rem] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.25rem] xl:text-[3.75rem] leading-[1.15] font-display font-medium bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 text-transparent bg-clip-text mb-4 xs:mb-5 whitespace-nowrap">
-                Ovation Digital Solutions
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 xs:gap-8 sm:gap-10 lg:gap-12">
+            <div className="relative z-20 w-full lg:w-1/2 px-2 xs:px-0 text-left">
+              <h1 className="text-5xl xs:text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl leading-[1.1] font-['Inter var',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji'] font-medium bg-gradient-to-r from-blue-300 via-blue-400 to-purple-300 text-transparent bg-clip-text mb-3 xs:mb-4 sm:mb-5">
+                Ovation
+                <br />
+                Digital
+                <br />
+                Solutions
               </h1>
-                  
-              <p className="text-lg xs:text-xl lg:text-2xl text-slate-300 leading-relaxed mb-6 xs:mb-7 max-w-[650px] font-normal">
+              
+              <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-slate-200 leading-relaxed mb-5 xs:mb-6 sm:mb-8 lg:mb-10 max-w-[650px] font-light">
                 At Ovation Digital Solutions, we believe great websites and applications shouldn&apos;t cost a fortune.
                 Get enterprise-quality development that fits your budget and reaches every user.
               </p>
                   
-              <div className="flex flex-wrap gap-4 xs:gap-5">
+              <div className="flex flex-row flex-wrap justify-start gap-3 xs:gap-4">
                 <button 
                   onClick={handleGetStarted}
-                  className="px-7 xs:px-8 py-3 xs:py-3.5 bg-blue-400 hover:bg-blue-500 text-slate-900 rounded-full font-semibold transition-colors text-base xs:text-lg"
+                  className="px-6 xs:px-7 sm:px-8 py-3 xs:py-3.5 sm:py-4
+                    bg-blue-500/10 hover:bg-blue-500/20 
+                    text-blue-300 hover:text-blue-200 
+                    rounded-full font-medium transition-all duration-300 
+                    text-base xs:text-lg
+                    border border-blue-400/20 hover:border-blue-400/40
+                    backdrop-blur-sm hover:-translate-y-0.5"
                 >
                   Contact Us
                 </button>
                   
                 <button 
                   onClick={handleLearnMore}
-                  className="px-7 xs:px-8 py-3 xs:py-3.5 bg-slate-800/50 hover:bg-slate-700/50 text-slate-200 rounded-full font-semibold border border-slate-700/50 transition-colors text-base xs:text-lg"
+                  className="px-6 xs:px-7 sm:px-8 py-3 xs:py-3.5 sm:py-4
+                    bg-slate-800/30 hover:bg-slate-700/40 
+                    text-slate-300 hover:text-slate-200 
+                    rounded-full font-medium 
+                    border border-slate-600/20 hover:border-slate-500/30 
+                    transition-all duration-300 
+                    text-base xs:text-lg
+                    backdrop-blur-sm hover:-translate-y-0.5"
                 >
                   Learn More
                 </button>
               </div>
             </div>
 
-            <div className="relative w-full xs:w-[400px] sm:w-[450px] md:w-[550px] lg:w-[600px] xl:w-[650px] -right-4 xs:-right-8 lg:-right-12 mt-8 lg:mt-0">
+            <div className="relative w-full lg:w-[52.5%] mt-6 xs:mt-8 sm:mt-10 lg:mt-0">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-transparent rounded-[42px] blur-2xl"></div>
               <Image 
-                src="/mediaTrio2.png" 
+                src="/mediaDuo2.png" 
                 alt="Multimedia Device Mockup" 
-                width={1200}
-                height={1200}
-                className="w-full h-auto object-contain relative z-10 transform rotate-[5deg] scale-105 hover:scale-100 transition-transform duration-500"
+                width={1365}
+                height={1365}
+                className="w-full h-auto object-contain relative z-10 transform hover:scale-[1.0525] transition-all duration-700 ease-out"
                 priority
               />
             </div>
