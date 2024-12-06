@@ -1,24 +1,26 @@
 import React from 'react';
 import { HiArrowUpRight } from 'react-icons/hi2';
+import Link from 'next/link';
 
 const Work: React.FC = () => {
   const projects = [
     {
       title: "Online Shoe Store",
       description: "A modern shopping experience helping customers find their perfect pair of shoes with easy browsing and links to purchase.",
-      link: "https://www.sneakar.io", 
+      externalLink: "https://www.sneakar.io",
+      caseStudyLink: "/case-studies/sneakar",
       tags: [
-        ["Increased Sales", "Higher Conversion"],  // First row
-        ["Shopify"]  // Second row
+        ["Increased Sales", "Higher Conversion"],
+        ["Shopify"]
       ]
     },
     {
       title: "Costa Rica Travel Guide",
       description: "A beautiful website showcasing Costa Rica's best tours and experiences, helping travelers plan their perfect vacation with easy booking.",
-      link: "https://costa-rica-tours.vercel.app/",
+      externalLink: "https://costa-rica-tours.vercel.app/",
       tags: [
-        ["Increased Bookings", "Customer Reviews"],  // First row
-        ["Travel Insights"]  // Second row
+        ["Increased Bookings", "Customer Reviews"],
+        ["Travel Insights"]
       ]
     }
   ];
@@ -39,15 +41,8 @@ const Work: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
           {projects.map((project, index) => (
-            <a 
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-              className="block group"
-            >
-              <div className="p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl border border-slate-900 hover:border-blue-400 transition-all duration-300 bg-slate-50 shadow-sm hover:shadow-md transform hover:-translate-y-1"
-                   style={{ minHeight: '300px', height: 'auto', width: '100%' }}>
+            <div key={index} className="block group">
+              <div className="p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl border border-slate-900 hover:border-blue-400 transition-all duration-300 bg-slate-50 shadow-sm hover:shadow-md transform hover:-translate-y-1">
                 <div className="flex justify-between items-start mb-4 sm:mb-6">
                   <h3 className="text-lg sm:text-xl md:text-2xl font-semibold group-hover:text-blue-400 transition-colors">
                     {project.title}
@@ -71,8 +66,27 @@ const Work: React.FC = () => {
                     </div>
                   ))}
                 </div>
+                
+                <div className="flex gap-4 mt-6">
+                  <a 
+                    href={project.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                  >
+                    Visit Site →
+                  </a>
+                  {project.caseStudyLink && (
+                    <Link
+                      href={project.caseStudyLink}
+                      className="text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                    >
+                      View Case Study →
+                    </Link>
+                  )}
+                </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
