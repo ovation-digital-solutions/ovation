@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import Link from 'next/link';
 
 interface ContactProps {
   id?: string;
@@ -82,9 +83,9 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
 
       <footer className="container mx-auto max-w-2xl mt-16 pt-8 border-t border-slate-800">
         <nav className="grid grid-cols-1 sm:flex sm:flex-wrap justify-center gap-y-4 sm:gap-x-8 text-sm text-slate-400 pb-8">
-          <a href="/blog" className="text-center hover:text-blue-400 transition-colors">Blog</a>
-          <a href="/case-studies" className="text-center hover:text-blue-400 transition-colors">Case Studies</a>
-          <a href="/about" className="text-center hover:text-blue-400 transition-colors">About Us</a>
+          <Link href="/blog" className="text-center hover:text-blue-400 transition-colors">Blog</Link>
+          <Link href="/case-studies" className="text-center hover:text-blue-400 transition-colors">Case Studies</Link>
+          <Link href="/about" className="text-center hover:text-blue-400 transition-colors">About Us</Link>
           <div className="flex justify-center gap-6 sm:gap-4">
             <a href="https://twitter.com" className="hover:text-blue-400 transition-colors">
               Twitter
