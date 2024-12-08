@@ -86,18 +86,10 @@ const Contact: React.FC<ContactProps> = ({ id }) => {
           <Link href="/blog" className="text-center hover:text-blue-400 transition-colors">Blog</Link>
           <Link href="/case-studies" className="text-center hover:text-blue-400 transition-colors">Case Studies</Link>
           <Link href="/about" className="text-center hover:text-blue-400 transition-colors">About Us</Link>
-          <div className="flex justify-center gap-6 sm:gap-4">
-            <a href="https://twitter.com" className="hover:text-blue-400 transition-colors">
-              Twitter
-            </a>
-            <a href="https://linkedin.com" className="hover:text-blue-400 transition-colors">
-              LinkedIn
-            </a>
-            <a href="https://github.com" className="hover:text-blue-400 transition-colors">
-              GitHub
-            </a>
-          </div>
         </nav>
+        <p className="text-center text-sm text-slate-500">
+          © {new Date().getFullYear()} Ovation Digital Solutions. All rights reserved.
+        </p>
       </footer>
     </div>
   );
