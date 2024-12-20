@@ -17,7 +17,7 @@ const Work: React.FC = () => {
     {
       title: "Costa Rica Travel Guide", 
       description: "A beautiful website showcasing Costa Rica's best tours and experiences, helping travelers plan their perfect vacation with easy booking.",
-      externalLink: "https://costa-rica-tours.vercel.app/",
+      externalLink: "https://www.saltnclouds.com/",
       caseStudyLink: "/case-studies/costa-rica",
       tags: [
         ["Increased Bookings", "Customer Reviews"],
