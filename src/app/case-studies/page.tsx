@@ -41,6 +41,19 @@ export default function CaseStudies() {
               Read more →
             </span>
           </Link>
+
+          <Link 
+            href="/case-studies/crowdconnect"
+            className="block p-6 bg-slate-800/50 rounded-lg border border-slate-700/50 hover:border-blue-400/50 transition-colors"
+          >
+            <h2 className="text-xl sm:text-2xl text-blue-400 mb-3">Crowd Connect RSVP</h2>
+            <p className="text-slate-300">
+              Building an enterprise-grade event management platform that streamlines seminar and event registration processes...
+            </p>
+            <span className="inline-block mt-4 text-blue-400 hover:text-blue-300">
+              Read more →
+            </span>
+          </Link>
         </div>
       </div>
     </div>

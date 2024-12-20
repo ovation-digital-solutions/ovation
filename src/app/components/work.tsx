@@ -1,5 +1,4 @@
 import React from 'react';
-import { HiArrowUpRight } from 'react-icons/hi2';
 import Link from 'next/link';
 
 const Work: React.FC = () => {
@@ -23,6 +22,16 @@ const Work: React.FC = () => {
         ["Increased Bookings", "Customer Reviews"],
         ["Travel Insights"]
       ]
+    },
+    {
+      title: "Event RSVP Platform",
+      description: "A streamlined RSVP and event management platform helping organizers create and manage events with ease while providing a seamless experience for attendees.",
+      externalLink: "https://crowdconnectrsvp.com/",
+      caseStudyLink: "/case-studies/crowdconnect",
+      tags: [
+        ["Event Management", "RSVP System"],
+        ["Real-time Updates"]
+      ]
     }
   ];
 
@@ -35,31 +44,30 @@ const Work: React.FC = () => {
           backgroundSize: '40px 40px',
         }}
       />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
         <h2 className="text-[1.5rem] xs:text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] leading-tight font-display text-foreground mb-12 sm:mb-16 md:mb-20 lg:mb-24 border-b-2 border-custom-gray pb-4">
           Recent Work
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="block group">
-              <div className="p-4 sm:p-6 md:p-8 lg:p-10 rounded-xl border border-slate-900 hover:border-blue-400 transition-all duration-300 bg-slate-50 shadow-sm hover:shadow-md transform hover:-translate-y-1">
-                <div className="flex justify-between items-start mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-semibold group-hover:text-blue-400 transition-colors">
+            <div key={index} className="block group h-[340px]">
+              <div className="p-4 sm:p-6 rounded-xl border border-slate-900 hover:border-blue-400 transition-all duration-300 bg-slate-50 shadow-sm hover:shadow-md transform hover:-translate-y-1 h-full flex flex-col">
+                <div className="mb-3">
+                  <h3 className="text-lg font-semibold group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
-                  <HiArrowUpRight className="text-slate-400 group-hover:text-blue-400 transition-colors text-xl sm:text-2xl" />
                 </div>
-                <p className="text-slate-600 text-base sm:text-lg mb-6 sm:mb-8">
+                <p className="text-slate-600 text-sm mb-4 line-clamp-3">
                   {project.description}
                 </p>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 mb-4">
                   {project.tags.map((rowTags, rowIndex) => (
                     <div key={rowIndex} className="flex flex-wrap gap-2 justify-start">
                       {rowTags.map((tag, tagIndex) => (
                         <span 
                           key={tagIndex}
-                          className="px-3 sm:px-4 py-1 bg-blue-100 text-blue-600 text-xs sm:text-sm rounded-full whitespace-nowrap"
+                          className="px-3 py-1 bg-blue-100 text-blue-600 text-xs rounded-full whitespace-nowrap"
                         >
                           {tag}
                         </span>
@@ -68,7 +76,7 @@ const Work: React.FC = () => {
                   ))}
                 </div>
                 
-                <div className="flex gap-4 mt-6">
+                <div className="flex gap-4 mt-auto">
                   <a 
                     href={project.externalLink}
                     target="_blank"
