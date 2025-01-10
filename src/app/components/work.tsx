@@ -4,6 +4,26 @@ import Link from 'next/link';
 const Work: React.FC = () => {
   const projects = [
     {
+      title: "Meridex AI",
+      description: "An AI-powered platform transforming real estate investment decision-making by combining artificial intelligence with comprehensive property data for intelligent analysis and portfolio management.",
+      externalLink: "https://www.meridexai.com",
+      caseStudyLink: "/case-studies/meridex",
+      tags: [
+        ["AI Analysis", "Real Estate"],
+        ["Portfolio Management"]
+      ]
+    },
+    {
+      title: "Event RSVP Platform",
+      description: "A streamlined RSVP and event management platform helping organizers create and manage events with ease while providing a seamless experience for attendees.",
+      externalLink: "https://crowdconnectrsvp.com/",
+      caseStudyLink: "/case-studies/crowdconnect",
+      tags: [
+        ["Event Management", "RSVP System"],
+        ["Real-time Updates"]
+      ]
+    },
+    {
       title: "Online Shoe Store",
       description: "A modern shopping experience helping customers find their perfect pair of shoes with easy browsing and links to purchase.",
       externalLink: "https://www.sneakar.io",
@@ -22,16 +42,6 @@ const Work: React.FC = () => {
         ["Increased Bookings", "Customer Reviews"],
         ["Travel Insights"]
       ]
-    },
-    {
-      title: "Event RSVP Platform",
-      description: "A streamlined RSVP and event management platform helping organizers create and manage events with ease while providing a seamless experience for attendees.",
-      externalLink: "https://crowdconnectrsvp.com/",
-      caseStudyLink: "/case-studies/crowdconnect",
-      tags: [
-        ["Event Management", "RSVP System"],
-        ["Real-time Updates"]
-      ]
     }
   ];
 
@@ -49,16 +59,16 @@ const Work: React.FC = () => {
           Recent Work
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="block group h-[340px]">
-              <div className="p-4 sm:p-6 rounded-xl border border-slate-900 hover:border-blue-400 transition-all duration-300 bg-slate-50 shadow-sm hover:shadow-md transform hover:-translate-y-1 h-full flex flex-col">
+            <div key={index} className="block group">
+              <div className="p-6 rounded-xl border border-slate-900 hover:border-blue-400 transition-all duration-300 bg-slate-50 shadow-sm hover:shadow-md transform hover:-translate-y-1 flex flex-col">
                 <div className="mb-3">
                   <h3 className="text-lg font-semibold group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
                 </div>
-                <p className="text-slate-600 text-sm mb-4 line-clamp-3">
+                <p className="text-slate-600 text-sm mb-4">
                   {project.description}
                 </p>
                 <div className="flex flex-col gap-2 mb-4">

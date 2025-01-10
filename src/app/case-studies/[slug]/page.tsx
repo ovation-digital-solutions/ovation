@@ -1,42 +1,45 @@
+import { notFound } from 'next/navigation';
+import Meridex from '@/app/components/case-studies/meridex';
 import Sneakar from '@/app/components/case-studies/sneakar';
 import CostaRica from '@/app/components/case-studies/costa-rica';
 import CrowdConnect from '@/app/components/case-studies/crowdconnect';
-import { notFound } from 'next/navigation';
 
-type CaseStudyComponents = {
-  [key: string]: () => JSX.Element;
-};
-
-interface PageProps {
+type PageProps = {
   params: Promise<{
     slug: string;
   }>;
-}
+};
+
+type CaseStudyComponents = {
+  [key: string]: React.ComponentType;
+};
 
 async function Page({ params }: PageProps) {
+  const { slug } = await params;
+  
   const caseStudies: CaseStudyComponents = {
+    meridex: Meridex,
     sneakar: Sneakar,
     'costa-rica': CostaRica,
     crowdconnect: CrowdConnect,
   };
 
-  const { slug } = await params;
-  const CaseStudyComponent = caseStudies[slug];
+  const Component = caseStudies[slug];
 
-  if (!CaseStudyComponent) {
+  if (!Component) {
     notFound();
   }
 
-  return <CaseStudyComponent />;
+  return <Component />;
 }
 
 export default Page;
 
-// Generate static paths for case studies
 export function generateStaticParams() {
   return [
     { slug: 'sneakar' },
     { slug: 'costa-rica' },
     { slug: 'crowdconnect' },
+    { slug: 'meridex' },
   ];
 }

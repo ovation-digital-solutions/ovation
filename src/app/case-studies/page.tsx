@@ -17,6 +17,19 @@ export default function CaseStudies() {
         
         <div className="grid gap-8">
           <Link 
+            href="/case-studies/meridex"
+            className="block p-6 bg-slate-800/50 rounded-lg border border-slate-700/50 hover:border-blue-400/50 transition-colors"
+          >
+            <h2 className="text-xl sm:text-2xl text-blue-400 mb-3">Meridex AI</h2>
+            <p className="text-slate-300">
+              Building an AI-powered platform that transforms real estate investment decision-making through intelligent analysis and portfolio management...
+            </p>
+            <span className="inline-block mt-4 text-blue-400 hover:text-blue-300">
+              Read more →
+            </span>
+          </Link>
+
+          <Link 
             href="/case-studies/sneakar"
             className="block p-6 bg-slate-800/50 rounded-lg border border-slate-700/50 hover:border-blue-400/50 transition-colors"
           >
